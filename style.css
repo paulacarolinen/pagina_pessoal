@@ -1,0 +1,209 @@
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: #000080;
+    margin: 0;
+    background-color: #000066;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px),
+                      radial-gradient(#ffff00 1px, transparent 1px);
+    background-size: 40px 40px, 70px 70px;
+    background-position: 0 0, 20px 30px;
+}
+
+header {
+    background: linear-gradient(180deg, #ff00ff, #6600cc);
+    border: 6px ridge #ffff00;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #ffff00;
+    text-shadow: 3px 3px #000000;
+    margin: 0 0 15px 0;
+}
+
+.letreiro {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: "Courier New", monospace;
+    border: 3px inset #999999;
+    padding: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.letreiro span {
+    display: inline-block;
+    animation: rolar 12s linear infinite;
+}
+
+@keyframes rolar {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+nav a {
+    display: inline-block;
+    background-color: #c0c0c0;
+    color: #0000ff;
+    font-weight: bold;
+    text-decoration: none;
+    border: 3px outset #ffffff;
+    padding: 5px 12px;
+    margin: 3px;
+}
+
+nav a:hover {
+    background-color: #ffff00;
+    color: #ff0000;
+    border-style: inset;
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+section {
+    background-color: #c0c0c0;
+    border: 4px outset #ffffff;
+    padding: 15px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #ffffff;
+    background: linear-gradient(90deg, #000080, #1084d0);
+    padding: 6px 10px;
+    margin: 0 0 15px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+hr {
+    border: none;
+    height: 6px;
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
+    margin: 20px 0;
+}
+
+.pisca {
+    color: #ff0000;
+    background-color: #ffff00;
+    font-size: 14px;
+    padding: 0 4px;
+    animation: piscar 1s steps(2, start) infinite;
+}
+
+@keyframes piscar {
+    to { visibility: hidden; }
+}
+
+.lista-interesses {
+    background-color: #ffffcc;
+    border: 3px dashed #ff00ff;
+    padding: 10px 10px 10px 40px;
+    line-height: 1.8;
+    list-style-type: square;
+}
+
+.foto {
+    display: block;
+    margin: 15px auto 5px auto;
+    width: 200px;
+    height: 200px;
+    border: 8px ridge #ff00ff;
+    border-radius: 10px;
+}
+
+fieldset {
+    background-color: #ffffcc;
+    border: 4px groove #ff00ff;
+    padding: 15px;
+}
+
+legend {
+    background-color: #ff00ff;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 95%;
+    font-family: "Courier New", monospace;
+    padding: 6px;
+    margin: 5px 0 10px 0;
+    border: 3px inset #999999;
+    background-color: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+    background-color: #ffffcc;
+    outline: none;
+}
+
+button {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: bold;
+    background-color: #c0c0c0;
+    border: 3px outset #ffffff;
+    padding: 8px 20px;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffff00;
+}
+
+button:active {
+    border-style: inset;
+}
+
+footer {
+    background: linear-gradient(180deg, #6600cc, #000033);
+    color: #ffffff;
+    border: 6px ridge #ffff00;
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.contador {
+    display: inline-block;
+    background-color: #000000;
+    color: #ff0000;
+    font-family: "Courier New", monospace;
+    border: 3px inset #999999;
+    padding: 5px 10px;
+}
+
+.pequeno {
+    font-size: 12px;
+    color: #cccccc;
+}
+
+footer a {
+    color: #00ffff;
+}
+
+footer a:hover {
+    color: #ffff00;
+    background-color: #ff0000;
+}

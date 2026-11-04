@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>página pessoal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>★ olá, eu sou a paula caroline ★</h1>
+        <div class="letreiro">
+            <span>seja muito bem vinda(o) à minha página pessoal!!!</span>
+        </div>
+        <nav>
+            <a href="#apresentacao">oii</a>
+            <a href="#interesses">o que curto</a>
+            <a href="#contato">fale comigo</a>
+            <a href="sobre.html">sobre mim</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="apresentacao">
+            <h2>apresentação <span class="pisca">NOVO!</span></h2>
+            <p>sou estudante do curso técnico em informática para internet no ifsemg - bq.</p>
+            <img src="img/foto.jpg" alt="Foto de Seu Nome" class="foto">
+        </section>
+
+        <hr>
+
+        <section id="interesses">
+            <h2>hobbys e interesses</h2>
+            <ul class="lista-interesses">
+                <li>hacking</li>
+                <li>sudoku</li>
+                <li>bateria</li>
+                <li>taylor swift</li>
+                <li>vasco da gama</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="contato">
+            <h2>fale comigo</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>envie sua mensagem</legend>
+
+                    <label for="nome">nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">e-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="assunto">assunto:</label>
+                    <input type="text" id="assunto" name="assunto">
+
+                    <label for="mensagem">mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+                    <button type="submit">enviar</button>
+                    <button type="reset">limpar</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>paula caroline - <a href="https://github.com/paulacarolinen">meu github</a></p>
+    </footer>
+</body>
+</html>
