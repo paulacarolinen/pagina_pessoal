@@ -1,7 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     color: #000080;
     margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
     background-color: #000066;
     background-image: radial-gradient(#ffffff 1px, transparent 1px),
                       radial-gradient(#ffff00 1px, transparent 1px);
@@ -10,6 +18,9 @@ body {
 }
 
 header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
     background: linear-gradient(180deg, #ff00ff, #6600cc);
     border: 6px ridge #ffff00;
     margin: 15px;
@@ -18,7 +29,7 @@ header {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: clamp(22px, 3vw, 28px);
     color: #ffff00;
     text-shadow: 3px 3px #000000;
     margin: 0 0 15px 0;
@@ -41,8 +52,20 @@ h1 {
 }
 
 @keyframes rolar {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+    justify-content: center;
+    gap: 6px;
 }
 
 nav a {
@@ -52,7 +75,7 @@ nav a {
     font-weight: bold;
     text-decoration: none;
     border: 3px outset #ffffff;
-    padding: 5px 12px;
+    padding: 8px 12px;
     margin: 3px;
 }
 
@@ -63,15 +86,25 @@ nav a:hover {
 }
 
 main {
-    width: 80%;
+    width: 90%;
     max-width: 800px;
     margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-content: start;
 }
 
 section {
+    grid-column: 1 / -1;
+    min-width: 0;
     background-color: #c0c0c0;
     border: 4px outset #ffffff;
     padding: 15px;
+}
+
+section.coluna {
+    grid-column: auto;
 }
 
 h2 {
@@ -87,13 +120,6 @@ p {
     line-height: 1.5;
 }
 
-hr {
-    border: none;
-    height: 6px;
-    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
-    margin: 20px 0;
-}
-
 .pisca {
     color: #ff0000;
     background-color: #ffff00;
@@ -103,7 +129,9 @@ hr {
 }
 
 @keyframes piscar {
-    to { visibility: hidden; }
+    to {
+        visibility: hidden;
+    }
 }
 
 .lista-interesses {
@@ -117,13 +145,65 @@ hr {
 .foto {
     display: block;
     margin: 15px auto 5px auto;
-    width: 200px;
-    height: 200px;
+    width: min(200px, 100%);
+    aspect-ratio: 1;
+    height: auto;
+    object-fit: cover;
     border: 8px ridge #ff00ff;
     border-radius: 10px;
 }
 
+.grid-cartoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.cartao {
+    min-width: 0;
+    min-height: 160px;
+    background-color: #ffffcc;
+    border: 3px ridge #ff00ff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.cartao h3 {
+    color: #ff00ff;
+    font-size: 18px;
+    margin: 0;
+}
+
+.cartao p {
+    margin: 0;
+}
+
+.cartao-destaque {
+    grid-column: span 2;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tags span {
+    background-color: #000080;
+    color: #ffffff;
+    border: 2px outset #999999;
+    padding: 3px 8px;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
 fieldset {
+    min-width: 0;
     background-color: #ffffcc;
     border: 4px groove #ff00ff;
     padding: 15px;
@@ -144,18 +224,25 @@ label {
 
 input,
 textarea {
-    width: 95%;
+    display: block;
+    width: 100%;
+    max-width: 100%;
     font-family: "Courier New", monospace;
-    padding: 6px;
+    font-size: 16px;
+    padding: 8px;
     margin: 5px 0 10px 0;
     border: 3px inset #999999;
     background-color: #ffffff;
 }
 
+textarea {
+    resize: vertical;
+}
+
 input:focus,
 textarea:focus {
     background-color: #ffffcc;
-    outline: none;
+    outline: 2px solid #000080;
 }
 
 button {
@@ -177,26 +264,15 @@ button:active {
 }
 
 footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     background: linear-gradient(180deg, #6600cc, #000033);
     color: #ffffff;
     border: 6px ridge #ffff00;
     margin: 15px;
     padding: 10px;
     text-align: center;
-}
-
-.contador {
-    display: inline-block;
-    background-color: #000000;
-    color: #ff0000;
-    font-family: "Courier New", monospace;
-    border: 3px inset #999999;
-    padding: 5px 10px;
-}
-
-.pequeno {
-    font-size: 12px;
-    color: #cccccc;
 }
 
 footer a {
@@ -206,4 +282,89 @@ footer a {
 footer a:hover {
     color: #ffff00;
     background-color: #ff0000;
+}
+
+@media (max-width: 900px) {
+    main {
+        width: 92%;
+        gap: 15px;
+    }
+
+    header {
+        padding: 18px;
+    }
+
+    nav {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+
+    .grid-cartoes {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .letreiro {
+        font-size: 13px;
+    }
+
+    nav {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    nav a {
+        margin: 2px 0;
+    }
+
+    main {
+        width: 95%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 15px auto;
+    }
+
+    section.coluna {
+        grid-column: 1 / -1;
+    }
+
+    .grid-cartoes {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-destaque {
+        grid-column: span 1;
+    }
+
+    .cartao {
+        min-height: 140px;
+    }
+
+    fieldset {
+        padding: 12px;
+    }
+
+    button {
+        margin-right: 5px;
+    }
+
+    footer {
+        margin: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .letreiro span,
+    .pisca {
+        animation: none;
+    }
 }

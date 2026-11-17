@@ -9,28 +9,32 @@
 <body>
     <header>
         <h1>★ olá, eu sou a paula caroline ★</h1>
+
         <div class="letreiro">
             <span>seja muito bem vinda(o) à minha página pessoal!!!</span>
         </div>
+
         <nav>
             <a href="#apresentacao">oii</a>
             <a href="#interesses">o que curto</a>
+            <a href="#tecnologias">tecnologias</a>
             <a href="#contato">fale comigo</a>
             <a href="sobre.html">sobre mim</a>
         </nav>
     </header>
 
     <main>
-        <section id="apresentacao">
+        <section id="apresentacao" class="coluna">
             <h2>apresentação <span class="pisca">NOVO!</span></h2>
+
             <p>sou estudante do curso técnico em informática para internet no ifsemg - bq.</p>
-            <img src="img/foto.jpg" alt="foto" class="foto">
+
+            <img src="img/foto.jpg" alt="Foto de Paula Caroline" class="foto">
         </section>
 
-        <hr>
-
-        <section id="interesses">
+        <section id="interesses" class="coluna">
             <h2>hobbys e interesses</h2>
+
             <ul class="lista-interesses">
                 <li>hacking</li>
                 <li>sudoku</li>
@@ -40,10 +44,60 @@
             </ul>
         </section>
 
-        <hr>
+        <section id="tecnologias">
+            <h2>tecnologias e interesses</h2>
+
+            <p>algumas coisas que gosto, estudo e tenho interesse!</p>
+
+            <div class="grid-cartoes">
+                <div class="cartao cartao-destaque">
+                    <h3>cibersegurança</h3>
+                    <p>tenho interesse em hacking, segurança da informação e em entender como funcionam as ameaças e vulnerabilidades dos sistemas.</p>
+
+                    <div class="tags">
+                        <span>hacking</span>
+                        <span>segurança</span>
+                        <span>forense</span>
+                    </div>
+                </div>
+
+                <div class="cartao">
+                    <h3>redes</h3>
+                    <p>gosto de aprender sobre redes de computadores, infraestrutura e como os dispositivos se comunicam.</p>
+
+                    <div class="tags">
+                        <span>redes</span>
+                        <span>infraestrutura</span>
+                    </div>
+                </div>
+
+                <div class="cartao">
+                    <h3>desenvolvimento web</h3>
+                    <p>gosto de criar páginas e explorar as possibilidades do desenvolvimento para a web.</p>
+
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>web</span>
+                    </div>
+                </div>
+
+                <div class="cartao">
+                    <h3>música</h3>
+                    <p>tocar bateria é um dos meus hobbies favoritos. também gosto muito de ouvir música!</p>
+
+                    <div class="tags">
+                        <span>bateria</span>
+                        <span>música</span>
+                        <span>taylor swift</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="contato">
             <h2>fale comigo</h2>
+
             <form action="#" method="post">
                 <fieldset>
                     <legend>envie sua mensagem</legend>
